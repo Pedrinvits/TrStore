@@ -1,0 +1,53 @@
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    background-color: #121214;
+  }
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  input, button, textarea, select {
+    font: inherit;
+  }
+
+h2 {
+  font-size: 30px;
+  color: rgb(85,55,135);
+}
+.bg-nav{
+  margin-top: 30px;
+  background-color: #202024;
+  border-radius: 15px;
+}
+a {
+  text-decoration: none;
+  color: #6344b7  ;
+}
+a:hover {
+  color: #46259e;
+}
+.flex {
+  display: flex;
+}
+.items-center{
+  align-items: center;
+}
+.justify-center{
+  justify-content: center;
+}
+.p-10{
+  padding: 10px;
+}
+.mt-20{
+  margin-top: 20px;
+}
+.purple-color{
+  color: #46259e;
+}
