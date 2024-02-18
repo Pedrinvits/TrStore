@@ -11,14 +11,14 @@
 <form action="{{ route('sellers.store')}}" method="post">
     @csrf
     <div class="mb-3">
-        <label for="name" class="form-label purple-color">Nome</label>
-        <input require type="text" class="form-control" id="name" name="name">
+        <label for="name" class="form-label purple-color">Nome do vendedor</label>
+        <input require type="text" class="form-control" id="name" name="name" placeholder="Nome">
     </div>
     <div class="mb-3">
-        <label for="email" class="form-label purple-color">Email</label>
-        <input require type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email">
+        <label for="email" class="form-label purple-color">Email do vendedor</label>
+        <input require type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" placeholder="Email">
     </div>
-    <button type="submit" class="btn btn-primary">Criar</button>
+    <button type="submit" class="btn btn-primary">Criar Vendedor</button>
 </form>
 </div>
 @endsection

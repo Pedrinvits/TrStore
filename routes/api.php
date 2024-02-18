@@ -16,10 +16,10 @@ use App\Http\Controllers\ApiSellerController;
 |
 */
 
-Route::resource('/seller', ApiSellerController::class)->except([
+Route::resource('/apiseller', ApiSellerController::class)->except([
     'edit', 'create'
 ]);
 
-Route::resource('/sale', ApiSaleController::class)->except([
+Route::resource('/apisale', ApiSaleController::class)->except([
     'edit', 'create'
 ]);

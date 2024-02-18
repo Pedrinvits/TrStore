@@ -17,6 +17,7 @@
                 <th class="">Valor da Venda</th>
                 <th class="">Comissão</th>
                 <th class="">Data de Venda</th>
+                <th>Editar</th>
             </tr>
        </thead>
     <tbody class="table-hover">
@@ -28,6 +29,9 @@
                 <td class="text-right">{{ number_format($sale->sale_value, 2, ',', '.') }}</td>
                 <td class="text-right">{{ number_format($sale->sale_commission, 2, ',', '.') }}</td>
                 <td class="text-left">{{ date_format(date_create($sale->created_at), "d/m/Y") }}</td>
+                <td>
+                <a class="p-10" href="{{ route('sales.edit',['sale' => $sale->sales_id , 'edit'] )}}">Editar Venda</a>
+            </td>
             </tr>
         @endforeach
     </tbody>

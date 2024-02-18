@@ -18,7 +18,6 @@ class SalesController extends Controller
      */
     public function index()
     {
-        // $sales = $this->sale->all();
         $modelSales = new Sales();
 
         $sales = $modelSales->list();
@@ -31,7 +30,6 @@ class SalesController extends Controller
      */
     public function create($seller)
     {
-        // var_dump($seller);  
         return view('SalesViews/saleCreate',['seller' => $seller]);
     }
 
@@ -66,9 +64,12 @@ class SalesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        // manda pra view que edita a venda
+        // print '<pre>';
+        // var_dump($id);
+        return view('SalesViews/saleEdit',['sale' => $id]);
     }
 
     /**
@@ -76,7 +77,19 @@ class SalesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // var_dump($id);
+        // var_dump($request->except(['_token','_method']));
+        
+        if(!empty($request->input('sale_value')) || !empty($request->input('created_at')) ){
+            $updated = $this->sale->where('sales_id',$id)->update($request->except(['_token','_method']));
+            if($updated){
+                return redirect()->back()->with('message','Informações alteradas com sucesso !');
+            }else{
+                return redirect()->back()->with('message','Updated error');
+            }
+       }else{
+        return redirect()->back()->with('message','Faltam Informações');
+       }
     }
 
     /**
@@ -84,7 +97,11 @@ class SalesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+       
+       
+       $this->sale->where('sales_id', $id)->delete();
+           
+       return redirect()->route('sellers.index');
     }
 
 
