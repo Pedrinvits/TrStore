@@ -1,66 +1,127 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<h1 align="center">Tr Store</h1>
+<p align="center">Sistema de gerenciamento de vendas</p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<div>
+    <h2>Proposta</h2>
+    <p>O Tr Store é um projeto de um desafio técnico com o objetivo fazer sistema para cadastro de vendedores e suas vendas, utlizando tecnologias como PHP e MySQL, exigindo um CRUD (Create, Read, Update e Delete) das informações , e também um relatório diário enviado por email sobre as vendas dos vendedores</p>
+</div>
+<div>
+    <h2>Requisitos</h2>
+    <ul>
+        <li>Cadastro de vendedores;</li>
+        <li>Listagem de vendedores;</li>
+        <li>Atualização de informações dos vendedores;</li>
+        <li>Exclusão de vendedores;</li>
+        <li>Cadastro de venda;</li>
+        <li>Listagem de vendas;</li>
+        <li>Cálculo de comissão de 8.5% sobre cada venda;</li>
+        <li>Rotina de envio de relatórios diários.</li>
+    </ul>
+</div>
 
-## About Laravel
+<div>
+    <h2>Tecnologias</h2>
+    <p>Utilizei as seguintes tecnologias para construção do projeto:</p>
+    <ul>
+        <li><a href="https://www.php.net/">[PHP 8.2.12]</a></li>
+        <li><a href="https://laravel.com/">[Laravel]</a></li>
+        <li><a href="https://getcomposer.org">[Composer]</a></li>
+        <li><a href="https://www.mysql.com/">[Mysql]</a></li>
+    </ul>
+</div>
+<div id="executando_projeto">
+    <h2>Executando o projeto</h2>
+    <h3>Pré-requisitos</h3>
+    <a href="https://www.php.net/">[PHP 8.2.12]</a>, 
+    <a href="https://getcomposer.org">[Composer]</a>, 
+    <a href="https://www.mysql.com/">[Mysql]</a>.</p>
+    <h3>Ambiente</h3>
+    <p>Crie um arquivo .env com os seguintes nomes:<br>
+    (Altere banco e envio de e-mail)</p>
+    
+```bash
+APP_NAME=trStore
+APP_ENV=local
+APP_KEY=base64:FYvJ2tNV0q0GxsqOE7t547Yb1xihITBAKAEIdUSbwe8=
+APP_DEBUG=true
+APP_URL=http://localhost
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+LOG_CHANNEL=stack
+LOG_DEPRECATIONS_CHANNEL=null
+LOG_LEVEL=debug
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+DB_CONNECTION=mysql
+DB_HOST=localhost
+DB_PORT=3306
+DB_DATABASE=Crud
+DB_USERNAME=root
+DB_PASSWORD=
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+BROADCAST_DRIVER=log
+CACHE_DRIVER=file
+FILESYSTEM_DISK=local
+QUEUE_CONNECTION=sync
+SESSION_DRIVER=file
+SESSION_LIFETIME=120
 
-## Learning Laravel
+MEMCACHED_HOST=127.0.0.1
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+MAIL_MAILER=smtp
+MAIL_HOST=mailpit
+MAIL_PORT=1025
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS="hello@example.com"
+MAIL_FROM_NAME="${APP_NAME}"
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_DEFAULT_REGION=us-east-1
+AWS_BUCKET=
+AWS_USE_PATH_STYLE_ENDPOINT=false
 
-## Laravel Sponsors
+PUSHER_APP_ID=
+PUSHER_APP_KEY=
+PUSHER_APP_SECRET=
+PUSHER_HOST=
+PUSHER_PORT=443
+PUSHER_SCHEME=https
+PUSHER_APP_CLUSTER=mt1
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+VITE_APP_NAME="${APP_NAME}"
+VITE_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
+VITE_PUSHER_HOST="${PUSHER_HOST}"
+VITE_PUSHER_PORT="${PUSHER_PORT}"
+VITE_PUSHER_SCHEME="${PUSHER_SCHEME}"
+VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
+```
 
-### Premium Partners
+<h3>Rodar a aplicação</h3>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+```bash
+# Clone este repositório
+$ git clone <https://github.com/Pedrinvits/TrStore.git>
 
-## Contributing
+# Acesse a pasta do projeto
+$ cd trStore
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# Instale as dependências
+$ composer install
 
-## Code of Conduct
+# Em seu banco de dados crie a seguinte tabela
+create database Crud;
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Caso não tenha executado as querys do arquivo querys.sql, execute as migrations
+$ php artisan migrate:fresh
 
-## Security Vulnerabilities
+# Execute a aplicação
+$ php artisan serve
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# O servidor iniciará na porta:8000 - acesse <http://localhost:8000>
+```
+</div>
